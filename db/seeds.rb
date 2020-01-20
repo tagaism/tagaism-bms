@@ -5,3 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+names = %w(Jack Paul Mark Igor John)
+names.each do |name|
+  user = User.create(name: name, birthday: DateTime.new(1990, 5, 5), email:"#{name.downcase}@mail.com")
+  Account.create(user_id: user.id, amount: 1000)
+end
